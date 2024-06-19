@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callback</title>
+</head>
+<body>
+    <script>
+        function tambah(a,b){
+            return a+b
+        }
+
+        function hitung(a,b,aksi){
+            let hasil = 0
+            hasil = aksi(a,b)
+            return hasil
+        }
+
+        document.write(hitung(1,2,tambah))
+        
+    </script>
+</body>
+</html>

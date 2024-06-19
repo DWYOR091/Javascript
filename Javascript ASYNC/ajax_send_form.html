@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Search Form</title>
+</head>
+<body>
+    <label for="username">username
+        <input type="text" id="username" name="username">
+    </label>
+    <label for="password">password
+            <input type="text" id="password" name="password">
+    </label>
+    <input type="button" id="login" value="login">
+    <h1 id="response"></h1>
+    <script>
+        function doLogin(){
+            const ajax = new XMLHttpRequest()
+            const form = new URLSearchParams()
+            
+            //form.append("username",document.getElementById("username"))
+            //form.append("password",document.getElementById("password"))
+
+            ajax.open("POST","https://eo2eqatmi1chynj.m.pipedream.net")
+            ajax.onload = () => {
+                const res = document.getElementById("response")
+                res.textContent = ajax.responseText
+        }
+            ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded")
+
+             ajax.send(form)
+        }
+
+        document.getElementById("login").onclick = doLogin
+    </script>
+</body>
+</html>

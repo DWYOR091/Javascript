@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+</head>
+<body>
+    <p id="p1"></p>
+    <p class="p2"></p>
+    <p class="p3"></p>
+    <p class="p4"></p>
+    <script>
+        //type selector
+        const typeSelector = document.querySelector("p")
+        //id
+        const idSelector = document.querySelector(".p1")
+        //class 
+        const classSelector = document.querySelector(".p2")
+        //attribut
+        const attributSelector = document.querySelector("[class]")
+
+        //operator attribut
+        const operatorAttrSelector = document.querySelector("div[class^='tes']")
+        
+    </script>
+</body>
+</html>

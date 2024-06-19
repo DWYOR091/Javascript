@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async Await</title>
+</head>
+<body>
+    <script>
+        //async saja sama seperti promise
+        async function fungsiku(){
+            return Promise.reject("kocak")
+        } 
+
+
+        fungsiku().then(function(value){
+            document.write(value)
+         },function(error){
+             document.write(error)
+         })
+        
+        //async await
+        async function cobaAwait(){
+            let p = Promise.resolve("Halo")
+            let hasil = await p
+            document.write(hasil)
+        }
+
+        cobaAwait()
+    </script>
+</body>
+</html>

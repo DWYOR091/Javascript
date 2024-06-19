@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajax Send Query Param</title>
+</head>
+<body>
+    <form action="">
+        <label for="search">
+            <input type="text" name="search" id="search">
+        </label>
+        <input type="button" value="Search" id="searchButton">
+    </form>
+    <h1 id="response"></h1>
+    <script>
+        function doSearch(){
+            const ajax = new XMLHttpRequest()
+            const param = new URLSearchParams()
+            const search = document.getElementById("search").value
+            param.append("search",search)
+            param.append("filter",search)
+
+            ajax.open("GET",`https://eo2eqatmi1chynj.m.pipedream.net?${param.toString()}`)
+            ajax.onload = () => {
+                const response = document.getElementById("response")
+                response.textContent = ajax.responseText
+            }
+
+            ajax.send()
+        }
+
+        document.getElementById("searchButton").onclick = doSearch
+    </script>
+</body>
+</html>

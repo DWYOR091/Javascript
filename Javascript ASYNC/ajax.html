@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=A, initial-scale=1.0">
+    <title>Ajax</title>
+</head>
+<h1 id="response"></h1>
+<body>
+    <script>
+        const ajax = new XMLHttpRequest()
+        //membuka
+        ajax.open("GET","./api/hello.json")
+        //menerima data
+        ajax.onload = () => {
+            const json = JSON.parse(ajax.responseText)
+            const res = document.getElementById("response")
+            res.textContent = json.response
+            document.body.appendChild(res)
+        }
+        //mengirim
+        ajax.send()
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attribut</title>
+</head>
+<body>
+    <img src="gambar.com" id="logo" alt="gambar">
+    <script>
+        const logo = document.getElementById("logo")
+        //mengubah isi alt
+        logo.alt = "kocak"
+        
+        console.log(logo.alt)
+        console.log(logo.src)
+
+        //mendapatkan attributnya
+        const src = logo.getAttribute("src")
+        console.info(src)
+    </script>
+</body>
+</html>

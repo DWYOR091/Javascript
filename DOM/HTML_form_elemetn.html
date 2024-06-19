@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML form element</title>
+</head>
+<body>
+    <form name="commentForm">
+        <label for="comment">
+            Comment : <input type="text" id="comment" name="comment">
+        </label><br>
+        <label for="from">
+            From : <input type="text" id="from" name="from">
+        </label><br>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="commentList"></div>
+    <script>
+       const form =  document.querySelector("form[name=commentForm]")
+
+       form.onsubmit = function(){
+        const commentList = document.getElementById("commentList")
+        const comment = document.getElementById("comment").value
+        const from = document.getElementById("from").value
+
+        const commentItem = document.createElement("p")
+        commentItem.textContent = `${comment} from ${from}`
+        commentList.appendChild(commentItem)
+        //mengakses form tanpa query selector
+        document.forms['commentForm'].reset();
+        event.preventDefault()
+       }
+
+    </script>
+</body>
+</html>

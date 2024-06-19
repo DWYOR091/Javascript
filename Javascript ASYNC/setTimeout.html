@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Method Async : setTimeout</title>
+</head>
+<body>
+    <script>
+        //setTimeout(callback,timeInmils) menjalankan proses async satu dalam waktu
+        const addElement = () => {
+            const header = document.createElement("h1")
+            header.textContent = "Javascript ASYNC"
+            document.body.appendChild(header)
+        }
+        
+        setTimeout(addElement, 5000)
+    </script>
+</body>
+</html>
